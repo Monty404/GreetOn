@@ -1,0 +1,58 @@
+ScreenMan:#:kivy
+    phrase:phrase 
+
+    BoxLayout:
+        orientation: 'vertical'
+        rows: 4
+        size: root.width, root.height
+        padding: 15
+
+        GridLayout:
+            cols:1
+            spacing:5
+            MDLabel:
+                text: "Phrase:"
+                halign: 'center'
+            TextInput:
+                id: phrase
+                halign: 'center'
+                font_size: 15
+                multiline: True
+                size_hint: (1,1)
+            
+        FloatLayout:
+            rows:4
+            padding:15
+            #pos_hint: {'center_x': .1, 'center_y': .5}
+            
+            MDRaisedButton:
+                text: "Gender"
+                font_size: 12
+                on_press: root.gender()
+                pos_hint: {'center_x': .15, 'center_y': .4}
+                width:100
+                height:24
+
+            MDRaisedButton:
+                text: "Voice Test"
+                font_size: 12
+                on_press: root.voiceTest()
+                pos_hint: {'center_x': .15, 'center_y': .3}
+                width:100
+                height:24
+
+            MDRaisedButton:
+                text: "Load File"
+                font_size: 12
+                on_press: root.load()
+                pos_hint: {'center_x': .15, 'center_y': .2}
+                width:100
+                height:24
+
+            MDRaisedButton:
+                text: "Save"
+                font_size: 12
+                on_press: root.save()
+                pos_hint: {'center_x': .15, 'center_y': .1}
+                width:100
+                height:24
